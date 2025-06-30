@@ -1,0 +1,25 @@
+# Model configuration
+node_feature_dim: 2  # Type and inverted features
+hidden_dim: 32  # Hidden dimension for node embeddings
+embedding_dim: 64  # Embedding dimension for recipes
+num_encoder_layers: 2  # Number of GNN layers
+num_decoder_layers: 6  # Number of transformer decoder layers
+nhead: 8  # Number of attention heads
+dropout: 0.1  # Dropout rate
+
+# Training configuration
+batch_size: 16
+learning_rate: 0.001
+weight_decay: 1e-5
+num_epochs: 100
+grad_clip: 1.0
+lr_patience: 5
+early_stopping: True
+early_stopping_patience: 10
+checkpoint_interval: 5
+checkpoint_dir: 'checkpoints'
+val_split: 0.2  # Validation split ratio
+
+# Data configuration
+bench_file: 'data/bench'
+recipe_file: 'data/recipes/data1.csv'
